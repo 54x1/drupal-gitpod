@@ -1,11 +1,11 @@
 FROM gitpod/workspace-mysql
 COPY ./php.ini /etc/php/7.4/mods-available/php.ini
-RUN sudo a2dismod php8.2 mpm_prefork \
-    sudo apt-get install php8.1-gd \
-    sudo apt install php8.1 \
-    sudo a2enmod php8.1 \
-    sudo update-alternatives --config php \
-    sudo apt install php8.1-mysql \
+RUN sudo a2dismod php8.2 mpm_prefork && \
+    sudo apt-get install php8.1-gd && \
+    sudo apt install php8.1 && \
+    sudo a2enmod php8.1 && \
+    sudo update-alternatives --config php && \
+    sudo apt install php8.1-mysql && \
     sudo apt-get update && \
     sudo apt-get install php-apcu php-imagick -y && \
     sudo apt-get remove composer -y && \
